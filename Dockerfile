@@ -28,13 +28,13 @@
 # ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-FROM portoleks/debian-i386:latest
+FROM portoleks/alpine-i686:latest
 
 ARG username=docker
 
 MAINTAINER Oleks <oleks@oleks.info>
 
-COPY emerald-0.99-linux.tar.gz /home/docker/
+COPY emerald-0.99-linux.tar.gz .
 
 RUN \
   tar xvf emerald-0.99-linux.tar.gz && \
@@ -44,4 +44,4 @@ RUN \
 ENV EMERALDROOT=/home/docker/emerald
 ENV PATH="/home/docker/emerald/bin:${PATH}"
 
-CMD ["bash"]
+CMD ["ash"]
