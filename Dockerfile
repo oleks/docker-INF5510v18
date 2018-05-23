@@ -44,4 +44,10 @@ RUN \
 ENV EMERALDROOT=/home/docker/emerald
 ENV PATH="/home/docker/emerald/bin:${PATH}"
 
+USER root
+RUN apt-get -y update && \
+  apt-get install -y build-essential && \
+  apt-get clean
+USER $username
+
 CMD ["bash"]
